@@ -8,13 +8,17 @@ pipeline {
     stages {
         stage('Compile Project') {
             steps {
-                bat 'mvn clean compile'
+                dir('Desktop/devopslab-main') {
+                    bat 'mvn clean compile'
+                }
             }
         }
         
         stage('Run TestNG Tests') {
             steps {
-                bat 'mvn test'
+                dir('Desktop/devopslab-main') {
+                    bat 'mvn test'
+                }
             }
         }
     }
