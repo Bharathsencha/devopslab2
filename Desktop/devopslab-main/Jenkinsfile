@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Compile Project') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
+        
+        stage('Run TestNG Tests') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+    }
+}
